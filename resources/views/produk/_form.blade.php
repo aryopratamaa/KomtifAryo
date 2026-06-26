@@ -1,4 +1,5 @@
 @php
+    $produk = $produk ?? new \App\Models\Produk();
     $kategoriList = $kategoriList ?? \App\Models\Kategori::orderBy('Nama')->get();
 @endphp
 

@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Event;
+use App\Models\Kategori;
+use App\Models\Produk;
+use App\Models\Stok;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -11,7 +15,35 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view("dashboard");
+        $totalProduk = Produk::count();
+        $totalKategori = Kategori::count();
+
+        $produkPerKategori = Kategori::query()
+            ->leftJoin('produks', 'kategoris.id', '=', 'produks.Kat_id')
+            ->select('kategoris.id', 'kategoris.Nama')
+            ->selectRaw('COUNT(produks.id) as total')
+            ->groupBy('kategoris.id', 'kategoris.Nama')
+            ->orderByDesc('total')
+            ->get();
+
+        $stokPerluDitambah = Stok::with('bahan')
+            ->whereColumn('Stoknow', '<=', 'Stokmin')
+            ->orderByRaw('(Stokmin - Stoknow) DESC')
+            ->limit(10)
+            ->get();
+
+        $eventTerbaru = Event::with('user')
+            ->latest()
+            ->limit(2)
+            ->get();
+
+        return view('dashboard', compact(
+            'totalProduk',
+            'totalKategori',
+            'produkPerKategori',
+            'stokPerluDitambah',
+            'eventTerbaru'
+        ));
     }
 
     /**

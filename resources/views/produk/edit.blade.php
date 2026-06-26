@@ -12,7 +12,7 @@
             @include('produk._form')
 
             <div class="mt-4">
-                <button type="submit" class="btn btn-warning">Update</button>
+                <button type="submit" class="btn btn-primary">Simpan</button>
                 <a href="{{ route('produk.index') }}" class="btn btn-secondary">Batal</a>
             </div>
         </form>
