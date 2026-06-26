@@ -25,7 +25,7 @@
             <div class="body-wrapper-inner">
                 <div class="container-fluid">
                     <!--  Row 1 -->
-                    @include('dashboard')
+                    @yield('content')
 
                     @include('partials.footer')
                 </div>
