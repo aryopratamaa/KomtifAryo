@@ -4,37 +4,50 @@
 @section('content')
     <div class="card p-4">
         <div class="d-flex justify-content-between align-items-center mb-4">
-            <h4>Setting Role</h4>
-            <a href="{{ route('setting.create') }}" class="btn btn-primary">Tambah Role</a>
+            <h4 class="mb-0">Setting Role</h4>
+            <a href="{{ route('setting.create') }}" class="btn btn-primary"><i class="ti ti-plus"></i> Tambah Role</a>
         </div>
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>No</th>
-                    <th>Nama Role</th>
-                    <th>Aksi</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($roles as $role)
+
+        @if (session('success'))
+            <div class="alert alert-success">{{ session('success') }}</div>
+        @endif
+
+        <div class="table-responsive">
+            <table class="table table-bordered align-middle text-nowrap">
+                <thead class="table-light">
                     <tr>
-                        <td>{{ $loop->iteration }}</td>
-                        <td>{{ $role->nama }}</td>
-                        <td>
-                            <a href="{{ route('setting.show', $role->id) }}" class="btn btn-info btn-sm">Detail</a>
-                            <a href="{{ route('setting.edit', $role->id) }}" class="btn btn-warning btn-sm">Edit</a>
-                            <form action="{{ route('setting.destroy', $role->id) }}" method="POST" class="d-inline">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger btn-sm"
-                                    onclick="return confirm('Apakah Anda yakin ingin menghapus role ini?')">Hapus</button>
-                            </form>
-                        </td>
+                        <th width="5%">#</th>
+                        <th>Nama Role</th>
+                        <th width="25%" class="text-center">Action</th>
                     </tr>
-                @endforeach
-            </tbody>
-        </table>
-        <div class="d-flex justify-content-end mt-3">
+                </thead>
+                <tbody>
+                    @forelse ($roles as $index => $role)
+                        <tr>
+                            <td>{{ $roles->firstItem() + $index }}</td>
+                            <td>{{ $role->nama }}</td>
+                            <td class="text-center">
+                                <form action="{{ route('setting.destroy', $role->id) }}" method="POST" class="d-inline"
+                                    onsubmit="return confirm('Apakah Anda yakin ingin menghapus role ini?')">
+                                    @csrf
+                                    @method('DELETE')
+
+                                    <a href="{{ route('setting.show', $role->id) }}" class="btn btn-info btn-sm">Detail</a>
+                                    <a href="{{ route('setting.edit', $role->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                                    <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+                                </form>
+                            </td>
+                        </tr>
+                    @empty
+                        <tr>
+                            <td colspan="3" class="text-center text-muted">Belum ada data role.</td>
+                        </tr>
+                    @endforelse
+                </tbody>
+            </table>
+        </div>
+
+        <div class="mt-3">
             {{ $roles->links() }}
         </div>
     </div>

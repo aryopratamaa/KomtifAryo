@@ -6,9 +6,6 @@
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h4 class="mb-0">List Bahan Baku</h4>
             <div class="d-flex gap-2">
-                <a href="{{ route('bahan.report.pdf') }}" target="_blank" class="btn btn-danger">
-                    <i class="ti ti-file-type-pdf"></i> Cetak PDF
-                </a>
                 <a href="{{ route('bahan.create') }}" class="btn btn-primary"><i class="ti ti-plus"></i> Tambah Bahan Baku</a>
             </div>
         </div>
