@@ -40,7 +40,7 @@
             <!--  Header End -->
             <div class="body-wrapper-inner">
                 <div class="container-fluid">
-                    <!--  Row 1 -->
+                    <!--  Content -->
                     <div class="row">
                         <div class="col-lg-12 d-flex align-items-stretch">
                             <div class="card w-100">
@@ -50,7 +50,7 @@
                             </div>
                         </div>
                     </div>
-                    <!--  Row 1 End -->
+                    <!--  Content End -->
 
                     @include('partials.footer')
                 </div>
