@@ -41,7 +41,16 @@
             <div class="body-wrapper-inner">
                 <div class="container-fluid">
                     <!--  Row 1 -->
-                    @yield('content')
+                    <div class="row">
+                        <div class="col-lg-12 d-flex align-items-stretch">
+                            <div class="card w-100">
+                                <div class="card-body p-4">
+                                    @yield('content')
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--  Row 1 End -->
 
                     @include('partials.footer')
                 </div>
