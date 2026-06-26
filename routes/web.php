@@ -7,6 +7,7 @@ use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\BahanController;
 use App\Http\Controllers\StokController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\RoleController;
 
 // Route::get('/', function () {
 //     return view('layouts.master');
@@ -20,3 +21,4 @@ Route::resource('produk', ProdukController::class);
 Route::resource('bahan', BahanController::class);
 Route::resource('stok', StokController::class);
 Route::resource('user', UserController::class);
+Route::resource('setting', RoleController::class);

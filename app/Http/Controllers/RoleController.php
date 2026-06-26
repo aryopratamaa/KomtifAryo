@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Role;
+use Illuminate\Validation\Rule;
 
 class RoleController extends Controller
 {
@@ -12,7 +14,7 @@ class RoleController extends Controller
     public function index()
     {
         $roles = Role::latest()->paginate(5);
-        return view('roles.index', compact('roles'));
+        return view('setting.index', compact('roles'));
     }
 
     /**
@@ -20,7 +22,9 @@ class RoleController extends Controller
      */
     public function create()
     {
-        return view('setting.create');
+        return view('setting.create', [
+            'namaOptions' => Role::namaOptions(),
+        ]);
     }
 
     /**
@@ -28,7 +32,14 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $validated = $request->validate([
+            'nama' => ['required', Rule::in(Role::namaOptions())],
+        ]);
+
+        Role::create($validated);
+
+        return redirect()->route('setting.index')
+            ->with('success', 'Role berhasil ditambahkan.');
     }
 
     /**
@@ -36,7 +47,9 @@ class RoleController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $role = Role::findOrFail($id);
+
+        return view('setting.show', compact('role'));
     }
 
     /**
@@ -44,7 +57,12 @@ class RoleController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $role = Role::findOrFail($id);
+
+        return view('setting.edit', [
+            'role' => $role,
+            'namaOptions' => Role::namaOptions(),
+        ]);
     }
 
     /**
@@ -52,7 +70,15 @@ class RoleController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $validated = $request->validate([
+            'nama' => ['required', Rule::in(Role::namaOptions())],
+        ]);
+
+        $role = Role::findOrFail($id);
+        $role->update($validated);
+
+        return redirect()->route('setting.index')
+            ->with('success', 'Role berhasil diperbarui.');
     }
 
     /**
@@ -60,6 +86,10 @@ class RoleController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $role = Role::findOrFail($id);
+        $role->delete();
+
+        return redirect()->route('setting.index')
+            ->with('success', 'Role berhasil dihapus.');
     }
 }
