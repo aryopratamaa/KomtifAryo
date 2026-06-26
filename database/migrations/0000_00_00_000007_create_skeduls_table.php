@@ -13,14 +13,13 @@ return new class extends Migration
     {
         Schema::create('skeduls', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')
+            $table->foreignId('User_id')
                 ->constrained('users')
                 ->onDelete('cascade');
             $table->date('tgltugas');
             $table->enum('shift', ['pagi','siang'])->default('pagi');
-            $table->foreign('role_id')
-                ->references('id')
-                ->on('roles')
+            $table->foreignId('Role_id')
+                ->constrained('roles')
                 ->onDelete('cascade');
             $table->timestamps();
         });

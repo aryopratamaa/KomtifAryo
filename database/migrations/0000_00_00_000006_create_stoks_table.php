@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('stoks', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('bahan_id')
+            $table->foreignId('Bahan_id')
                 ->constrained('bahans')
                 ->onDelete('cascade');
             $table->integer('Stoknow');

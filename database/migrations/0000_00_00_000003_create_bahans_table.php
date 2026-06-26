@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('bahans', function (Blueprint $table) {
             $table->id();
-            $table->string('nama', 255);
-            $table->enum('satuan', ['kg', 'gr', 'pcs', 'liter']);
+            $table->string('Nama', 255);
+            $table->enum('Satuan', ['kg', 'gr', 'pcs', 'liter']);
             $table->timestamps();
         });
     }

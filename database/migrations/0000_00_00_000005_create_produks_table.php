@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('produks', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('kategori_id')
+            $table->foreignId('Kat_id')
                 ->constrained('kategoris')
                 ->onDelete('cascade');
-            $table->string('nama', 255);
-            $table->integer('harga_modal');
-            $table->integer('harga_jual');
+            $table->string('Nama', 255);
+            $table->integer('Harga_modal');
+            $table->integer('Harga_jual');
             $table->timestamps();
         });
     }
