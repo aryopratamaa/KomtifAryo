@@ -12,6 +12,10 @@
                 <td>{{ $user->role->nama ?? '-' }}</td>
             </tr>
             <tr>
+                <th>Nama</th>
+                <td>{{ $user->Nama }}</td>
+            </tr>
+            <tr>
                 <th>Email</th>
                 <td>{{ $user->Email }}</td>
             </tr>

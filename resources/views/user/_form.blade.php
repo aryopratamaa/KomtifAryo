@@ -20,6 +20,15 @@
 </div>
 
 <div class="mb-3">
+    <label for="Nama" class="form-label">Nama</label>
+    <input type="text" name="Nama" id="Nama" class="form-control @error('Nama') is-invalid @enderror"
+        value="{{ old('Nama', $user->Nama ?? '') }}">
+    @error('Nama')
+        <small class="text-danger">{{ $message }}</small>
+    @enderror
+</div>
+
+<div class="mb-3">
     <label for="Email" class="form-label">Email</label>
     <input type="email" name="Email" id="Email" class="form-control @error('Email') is-invalid @enderror"
         value="{{ old('Email', $user->Email ?? '') }}">

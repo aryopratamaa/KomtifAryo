@@ -8,6 +8,7 @@ use App\Http\Controllers\BahanController;
 use App\Http\Controllers\StokController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\EventController;
 
 // Route::get('/', function () {
 //     return view('layouts.master');
@@ -22,3 +23,4 @@ Route::resource('bahan', BahanController::class);
 Route::resource('stok', StokController::class);
 Route::resource('user', UserController::class);
 Route::resource('setting', RoleController::class);
+Route::resource('event', EventController::class);

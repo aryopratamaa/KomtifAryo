@@ -19,6 +19,7 @@
                     <tr>
                         <th width="5%">#</th>
                         <th>Role</th>
+                        <th>Nama</th>
                         <th>Email</th>
                         <th width="25%" class="text-center">Action</th>
                     </tr>
@@ -28,6 +29,7 @@
                         <tr>
                             <td>{{ $users->firstItem() + $index }}</td>
                             <td>{{ $user->role->nama ?? '-' }}</td>
+                            <td>{{ $user->Nama }}</td>
                             <td>{{ $user->Email }}</td>
                             <td class="text-center">
                                 <form action="{{ route('user.destroy', $user->id) }}" method="POST" class="d-inline"
@@ -45,7 +47,7 @@
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="4" class="text-center text-muted">Belum ada data user.</td>
+                            <td colspan="5" class="text-center text-muted">Belum ada data user.</td>
                         </tr>
                     @endforelse
                 </tbody>

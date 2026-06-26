@@ -6,9 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Event extends Model
 {
-    protected $fillable = ['nama', 'tglmulai', 'tglselesai', 'deskripsi', 'user_id'];
+    protected $table = 'events';
+
+    protected $fillable = ['Nama', 'tglmulai', 'tglselesai', 'Deskripsi', 'User_id'];
+
     public function user()
     {
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->belongsTo(User::class, 'User_id');
     }
 }
