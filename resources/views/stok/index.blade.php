@@ -6,7 +6,12 @@
     <div class="card p-4">
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h4 class="mb-0">Daftar Stok</h4>
-            <a href="{{ route('stok.create') }}" class="btn btn-primary"><i class="ti ti-plus"></i> Tambah Stok</a>
+            <div class="d-flex gap-2">
+                <a href="{{ route('stok.report.pdf') }}" target="_blank" class="btn btn-danger">
+                    <i class="ti ti-file-type-pdf"></i> CETAK
+                </a>
+                <a href="{{ route('stok.create') }}" class="btn btn-primary"><i class="ti ti-plus"></i> Tambah Stok</a>
+            </div>
         </div>
 
         @if (session('success'))

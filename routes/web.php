@@ -9,6 +9,7 @@ use App\Http\Controllers\StokController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\ReportController;
 
 // Route::get('/', function () {
 //     return view('layouts.master');
@@ -24,3 +25,5 @@ Route::resource('stok', StokController::class);
 Route::resource('user', UserController::class);
 Route::resource('setting', RoleController::class);
 Route::resource('event', EventController::class);
+Route::get('report/bahan/pdf', [ReportController::class, 'bahanStokPdf'])->name('bahan.report.pdf');
+Route::get('report/stok/pdf', [ReportController::class, 'bahanStokPdf'])->name('stok.report.pdf');
