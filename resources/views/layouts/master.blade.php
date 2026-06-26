@@ -7,6 +7,22 @@
     <title>Flexy Free Bootstrap Admin Template by WrapPixel</title>
     <link rel="shortcut icon" type="image/png" href="{{ asset('template/assets/images/logos/favicon.png') }}" />
     <link rel="stylesheet" href="{{ asset('template/assets/css/styles.min.css') }}" />
+    <style>
+        .body-wrapper .body-wrapper-inner {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .body-wrapper .body-wrapper-inner>.container-fluid {
+            min-height: inherit;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .body-wrapper .body-wrapper-inner>.container-fluid>footer {
+            margin-top: auto;
+        }
+    </style>
 </head>
 
 <body>
