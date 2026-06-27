@@ -55,7 +55,7 @@
             <tr>
                 <th>No</th>
                 <th>Nama</th>
-                <th>Stoknow</th>
+                <th>Stok Sekarang</th>
                 <th>Satuan</th>
             </tr>
         </thead>

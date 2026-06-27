@@ -10,17 +10,17 @@ class ReportController extends Controller
 {
     public function bahanStokPdf()
     {
-        $data = DB::table('bahans')
-            ->leftJoin('stoks', 'bahans.id', '=', 'stoks.Bahan_id')
+        $data = DB::table('stoks')
+            ->join('bahans', 'stoks.Bahan_id', '=', 'bahans.id')
             ->select([
                 'bahans.Nama',
                 'bahans.Satuan',
-                DB::raw('COALESCE(stoks.Stoknow, 0) as Stoknow'),
+                'stoks.Stoknow',
             ])
             ->orderBy('bahans.Nama')
             ->get();
 
-        $pdf = Pdf::loadView('bahan.report', [
+        $pdf = Pdf::loadView('stok.report', [
             'data' => $data,
             'printedAt' => now(),
         ])->setPaper('a4', 'portrait');

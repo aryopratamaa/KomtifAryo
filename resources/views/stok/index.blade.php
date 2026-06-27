@@ -62,7 +62,7 @@
         </div>
 
         <div class="mt-3">
-            {{ $stoks->links() }}
+            {{ $stoks->links('pagination::bootstrap-5') }}
         </div>
     </div>
 @endsection

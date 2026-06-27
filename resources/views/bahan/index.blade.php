@@ -50,5 +50,9 @@
                 </tbody>
             </table>
         </div>
+
+        <div class="d-flex justify-content-end mt-3">
+            {{ $bahans->links('pagination::bootstrap-5') }}
+        </div>
     </div>
 @endsection

@@ -56,7 +56,7 @@
         </div>
 
         <div class="mt-3">
-            {{ $events->links() }}
+            {{ $events->links('pagination::bootstrap-5') }}
         </div>
     </div>
 @endsection
