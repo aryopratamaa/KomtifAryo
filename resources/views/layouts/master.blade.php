@@ -52,8 +52,9 @@
                     </div>
                     <!--  Content End -->
 
-                    @include('partials.footer')
+
                 </div>
+                @include('partials.footer')
             </div>
         </div>
     </div>
