@@ -1,10 +1,10 @@
 @extends('layouts.master')
-@section('title', 'List Bahan Baku')
+@section('title', 'Data Bahan Baku')
 
 @section('content')
     <div class="card p-4">
         <div class="d-flex justify-content-between align-items-center mb-4">
-            <h4 class="mb-0">List Bahan Baku</h4>
+            <h4 class="mb-0">Data Bahan Baku</h4>
             <div class="d-flex gap-2">
                 <a href="{{ route('bahan.create') }}" class="btn btn-primary"><i class="ti ti-plus"></i> Tambah Bahan Baku</a>
             </div>
@@ -16,7 +16,7 @@
             <table class="table table-bordered align-middle text-nowrap">
                 <thead class="table-light">
                     <tr>
-                        <th width="5%">#</th>
+                        <th width="5%">No</th>
                         <th>Nama Bahan Baku</th>
                         <th>Satuan</th>
                         <th width="25%" class="text-center">Action</th>

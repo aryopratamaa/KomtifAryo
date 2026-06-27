@@ -1,11 +1,11 @@
 @extends('layouts.master')
 
-@section('title', 'Daftar Stok')
+@section('title', 'Data Stok')
 
 @section('content')
     <div class="card p-4">
         <div class="d-flex justify-content-between align-items-center mb-4">
-            <h4 class="mb-0">Daftar Stok</h4>
+            <h4 class="mb-0">Data Stok</h4>
             <div class="d-flex gap-2">
                 <a href="{{ route('stok.report.pdf') }}" target="_blank" class="btn btn-danger">
                     <i class="ti ti-file-type-pdf"></i> CETAK
@@ -22,7 +22,7 @@
             <table class="table table-bordered align-middle text-nowrap">
                 <thead class="table-light">
                     <tr>
-                        <th width="5%">#</th>
+                        <th width="5%">No</th>
                         <th>Bahan</th>
                         <th>Satuan</th>
                         <th>Stok Sekarang</th>

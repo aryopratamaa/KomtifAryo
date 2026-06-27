@@ -1,10 +1,10 @@
 @extends('layouts.master')
-@section('title', 'List Event')
+@section('title', 'Data Event')
 
 @section('content')
     <div class="card p-4">
         <div class="d-flex justify-content-between align-items-center mb-4">
-            <h4 class="mb-0">List Event</h4>
+            <h4 class="mb-0">Data Event</h4>
             <a href="{{ route('event.create') }}" class="btn btn-primary"><i class="ti ti-plus"></i> Tambah Event</a>
         </div>
 
@@ -18,7 +18,7 @@
             <table class="table table-bordered align-middle text-nowrap">
                 <thead class="table-light">
                     <tr>
-                        <th width="5%">#</th>
+                        <th width="5%">No</th>
                         <th>Nama</th>
                         <th>Tanggal Mulai</th>
                         <th>Tanggal Selesai</th>

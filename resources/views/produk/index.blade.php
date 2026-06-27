@@ -1,11 +1,11 @@
 @extends('layouts.master')
 
-@section('title', 'Daftar Produk')
+@section('title', 'Data Produk')
 
 @section('content')
     <div class="card p-4">
         <div class="d-flex justify-content-between align-items-center mb-4">
-            <h4 class="mb-0">Daftar Produk</h4>
+            <h4 class="mb-0">Data Produk</h4>
             <a href="{{ route('produk.create') }}" class="btn btn-primary"><i class="ti ti-plus"></i> Tambah Produk</a>
         </div>
 
@@ -17,7 +17,7 @@
             <table class="table table-bordered align-middle text-nowrap">
                 <thead class="table-light">
                     <tr>
-                        <th width="5%">#</th>
+                        <th width="5%">No</th>
                         <th>Nama Produk</th>
                         <th>Kategori</th>
                         <th>Harga Modal</th>
@@ -41,8 +41,7 @@
 
                                     <a href="{{ route('produk.show', $item->id) }}" class="btn btn-info btn-sm">Detail</a>
 
-                                    <a href="{{ route('produk.edit', $item->id) }}"
-                                        class="btn btn-warning btn-sm">Edit</a>
+                                    <a href="{{ route('produk.edit', $item->id) }}" class="btn btn-warning btn-sm">Edit</a>
 
                                     <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
                                 </form>

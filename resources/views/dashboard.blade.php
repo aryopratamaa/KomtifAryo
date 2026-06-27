@@ -3,7 +3,7 @@
 
 @section('content')
     <div class="page-heading mb-4">
-        <h3 class="mb-1">Dashboard Utama</h3>
+        <h3 class="mb-1">Dashboard TEFA</h3>
         <p class="text-muted mb-0">Ringkasan data produk, stok, dan event.</p>
     </div>
 

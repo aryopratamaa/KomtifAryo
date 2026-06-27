@@ -1,10 +1,10 @@
 @extends('layouts.master')
-@section('title', 'List Kategori')
+@section('title', 'Data Kategori Produk')
 
 @section('content')
     <div class="card p-4">
         <div class="d-flex justify-content-between align-items-center mb-4">
-            <h4 class="mb-0">List Kategori</h4>
+            <h4 class="mb-0">Data Kategori Produk</h4>
             <a href="{{ route('kategori.create') }}" class="btn btn-primary"><i class="ti ti-plus"></i> Tambah Kategori</a>
         </div>
 
@@ -16,7 +16,7 @@
             <table class="table table-bordered align-middle text-nowrap">
                 <thead class="table-light">
                     <tr>
-                        <th width="5%">#</th>
+                        <th width="5%">No</th>
                         <th>Nama Kategori</th>
                         <th>Deskripsi</th>
                         <th width="25%" class="text-center">Action</th>

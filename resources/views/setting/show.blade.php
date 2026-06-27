@@ -10,6 +10,9 @@
             <input type="text" id="nama" class="form-control" value="{{ $role->nama }}" readonly>
         </div>
 
-        <a href="{{ route('setting.index') }}" class="btn btn-secondary">Kembali</a>
+        <div class="mt-3">
+            <a href="{{ route('setting.index') }}" class="btn btn-secondary">Kembali</a>
+            <a href="{{ route('setting.edit', $role->id) }}" class="btn btn-warning">Edit Role</a>
+        </div>
     </div>
 @endsection
