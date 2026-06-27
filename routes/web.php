@@ -25,5 +25,5 @@ Route::resource('stok', StokController::class);
 Route::resource('user', UserController::class);
 Route::resource('setting', RoleController::class);
 Route::resource('event', EventController::class);
-Route::get('report/bahan/pdf', [ReportController::class, 'bahanStokPdf'])->name('bahan.report.pdf');
+
 Route::get('report/stok/pdf', [ReportController::class, 'bahanStokPdf'])->name('stok.report.pdf');
