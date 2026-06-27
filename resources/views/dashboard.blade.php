@@ -30,7 +30,7 @@
                         <i class="ti ti-category"></i>
                     </div>
                     <div>
-                        <h6 class="text-muted mb-1">Total Kategori</h6>
+                        <h6 class="text-muted mb-1">Kategori Produk</h6>
                         <h4 class="mb-0">{{ $totalKategori }}</h4>
                     </div>
                 </div>
